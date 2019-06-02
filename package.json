@@ -6,9 +6,12 @@
   "author": "Lewis Communications",
   "license": "Apache",
   "scripts": {
-
+    "docsify": "docsify serve",
+    "generate:docs:3": "node node_modules/wee-docs-generator/index.js --v 3",
+    "generate:docs:4": "node node_modules/wee-docs-generator/index.js --v 4"
   },
   "dependencies": {
-    "docsify-algolia-search-plugin": "^1.0.0-beta.2"
+    "docsify": "^4.9.4",
+    "wee-docs-generator": "^1.0.0"
   }
 }
