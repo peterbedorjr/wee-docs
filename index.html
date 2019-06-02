@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wee-docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+    <style>
+        :root {
+        /* Reduce the font size */
+        --base-font-size: 15px;
+
+        /* Change the theme color hue */
+        /* --theme-hue: 325; */
+        }
+    </style>
+    <style>
+        @media (min-width: 780px) {
+            .code-split {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .code-split pre {
+                flex: 1;
+            }
+            .code-split pre:first-child {
+                margin-right: 2.4em;
+            }
+        }
+    </style>
+    <style>
+        .markdown-section table {
+            display: table;
+            width: 100%;
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+        }
+        .sidebar > h1 img {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="./plugins/SplitCodeBlocks.js"></script>
+    <script src="./plugins/footer.js"></script>
+    <script>
+        window.$docsify = {
+            name: 'Wee',
+            repo: 'weepower/wee',
+            logo: '_media/logo.png',
+            // logo: 'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjMzLjkgODQuNSI+PHBhdGggY2xhc3M9InN0MCIgZD0iTTEyOS4zIDE2LjVjMS43LTEuNiA2LjktNi40IDMuOS0xMi4xLTEtMi0yLjgtMy41LTQuNy00LjEtMS43LS41LTMuNS0uNC01LjEuNS02IDMuMi0xMS4xIDkuNi0xNS42IDE1LjJsLTEuNCAxLjdjLTYuMyA3LjgtMTEuOCAxNS4xLTE2LjkgMjIuMkM4OC44IDQwLjkgODggNDIgODcuMyA0MyA4MiA1MC41IDc2LjUgNTguMiA3MC4xIDY0LjhjLTEuNiAxLjctMy4yIDIuNS0zLjYgMi40LS4xLS4xLS4xLS4zIDAtLjkuNC0yLjMgMS42LTQuNCAyLjgtNi41LjMtLjUuNi0xIC44LTEuNSAxLTEuOCAyLjEtMy43IDMuMS01LjUgMS42LTIuOCAzLjMtNS43IDQuOC04LjcuOC0xLjYgMS42LTMuMiAyLjUtNC44IDMtNS43IDYuMi0xMS43IDcuMy0xOC41LjYtMy40LS4zLTYuNy0yLjItOC45LTIuNi0yLjktNi4zLTMuMy0xMS0xLjEtMi40IDEuMS00LjcgMi42LTcgNC41LTYuMyA1LjItMTEuOSAxMS4zLTE3LjMgMTcuMy0xLjkgMi4xLTMuOSA0LjMtNS45IDYuNC04LjUgOS0xNi45IDE3LjUtMjYuMyAyNi45LTEuMSAxLjEtMi4zIDEuNC0yLjggMS0uNC0uMy0uNi0xLjMuMS0yLjggNC04LjkgOS42LTE3LjcgMTctMjYuOSAyLjQtMyA0LjktNS42IDcuNi04LjQuNy0uOCAxLjUtMS41IDIuMi0yLjMuNC0uNC44LS44IDEuMi0xLjMgMy0zIDYtNi4xIDYuOS0xMC41LjgtNC0xLjctOC4yLTUuNi05LjUtNS0xLjYtOC44IDMuMi0xMC40IDUuMi05LjcgMTIuMS0yMiAyOC4zLTMwLjggNDYuNy0xLjQgMi45LTIuNyA2LjEtMy4zIDkuNUMtLjcgNzIgLjcgNzguOSA1LjkgODIuNGMuMi4yLjUuMy43LjQgMS45IDEuMSAzLjkgMS43IDUuOSAxLjcgMi4zIDAgNC43LS43IDctMi4yIDcuMS00LjQgMTEuNC05LjIgMTYuMy0xNC44IDEuMy0xLjQgMi42LTIuOSA0LTQuNSAzLjItMy40IDUuOS02LjYgOC42LTkuNiA1LjQtNi4xIDEwLjQtMTEuOCAxNy4zLTE4LjQgMCAwIC4xIDAgLjEtLjEtLjEuNy0uNiAyLjItMS45IDVsLS4xLjJjLTEuMyAyLjgtMi44IDUuNi00LjMgOC4zLTMuOCA3LjEtNy44IDE0LjQtOC41IDIzLjEtLjMgNC42IDEuMyA4LjUgNC41IDEwLjggMy4yIDIuMyA3LjQgMi43IDExLjcuOSAxMC45LTQuNCAxOC0xNC4xIDI0LjktMjMuNSAxLjItMS42IDIuNC0zLjIgMy42LTQuOEMxMDUuMyA0Mi43IDExNi41IDI4LjUgMTI5LjMgMTYuNXpNMjE3LjYgNTMuNmMtMi42LS41LTUuNC43LTcuNSAzLjEtNC4yIDQuOS0xMi44IDEzLjItMjIuNCAxMy40LTMuOS4xLTcuNC0xLjgtOS4xLTQuNy0xLjItMi4yLTEuNC01LjEtLjMtNyAxLjEtMiAzLjItMi4xIDUuNC0yLjEuNSAwIC45IDAgMS40IDAgMTMuOC0uOSAyNy43LTcuNiAzNy4xLTE4LjIgNC40LTQuOCAxNS45LTE3LjcgOS44LTI4LTMuMS01LjEtOS4xLTcuMi0xNi42LTUuN0MxOTggOCAxODUuNyAyMi41IDE3NS41IDM1LjhsLTEuMyAxLjdjLTEwLjcgMTQuMS0yMi44IDMwLjEtNDAuOSAzMi42LS41LjEtMS4xLjEtMS43LjItMy4zLjMtNi43LS45LTguOC0zLTEuNi0xLjYtMi4zLTMuNS0yLjEtNS43LjMtMy42IDMuMy01LjQgOS4yLTUuNiA0LjctLjEgOC42LS44IDEyLjYtMi4zIDYtMi4yIDEyLTUuOCAxNy43LTEwLjcgNi41LTUuNSAxMy40LTEyLjYgMTUuOC0yMi41IDEuMi00LjguNC05LTIuMi0xMi4xLTIuNi0zLjEtNi43LTQuNi0xMS43LTQuMy0yIC4xLTQuMy42LTcgMS41LTQuNyAxLjUtOS4xIDQuMS0xMy4yIDYuNi04LjkgNS41LTE2LjcgMTIuOC0yMi43IDIxLjEtNS42IDcuOC0xNC4zIDIyLjktMTAuMSAzNi41IDEuOSA2LjEgNi41IDEwLjkgMTIuNSAxMyAyLjcuOSA1LjYgMS40IDguNiAxLjQgNi42IDAgMTMuNy0yLjMgMjAuMy02LjcgMi42LTEuNyA1LjItMy43IDcuNi01LjcuOS0uNyAxLjktMS41IDIuOC0yLjIuMSAwIC4xLS4xLjItLjIuMS0uMS4yLS4xLjMtLjIuMi0uMi41LS40LjYtLjYuOS0uNyAxLjgtMS40IDIuNy0yLjEgMi4yIDcuOSA2LjEgMTIuOSAxMi4xIDE1LjUgMTMgNS41IDI4LTEuMyAzNy43LTkuNiAzLjUtMyA1LjgtNS44IDcuMi04LjcuOS0yIDEuMS0zLjguNC01LjdDMjIxLjYgNTUuNiAyMTkuOCA1NCAyMTcuNiA1My42ek0xOTkuNyAyOC4xTDE5OS43IDI4LjFjNC45LTQgMTAuNC02LjggMTcuMy05LjdsLjMtLjFjMS0uNCAxLjMtLjUgMS43LS4xLjEuMiAwIC45LS4yIDEuNC02LjUgMTIuNS0yMS41IDIxLjgtMzAuMyAyMS44LS4xIDAtLjEgMC0uMiAwQzE5MS4xIDM1LjYgMTk1LjQgMzEuNiAxOTkuNyAyOC4xek0xNDEuMiAyOS43YzUuNy01LjEgMTIuNy04LjMgMTguOC0xMWwuMy0uMWMuOC0uNCAxLjQtLjYgMS45LS4yLjIuMi4xLjYtLjMgMS4zLTUuMyAxMC4zLTE5LjYgMjEuOS0zMC41IDIyQzEzMy43IDM3IDEzNyAzMy40IDE0MS4yIDI5Ljd6Ij48L3BhdGg+PC9zdmc+',
+            externalLinkTarget: '_blank',
+            // routerMode: 'history',
+            notFoundPage: true,
+            loadSidebar: true,
+            loadNavbar: true,
+            subMaxLevel: 2,
+            plugins: [
+                DocsifyFooterPlugin(),
+            ],
+            search: {
+                placeholder: 'Type to search',
+                noData: 'No Results',
+                algolia: {
+                    token: 'fcfaef4a5675930be7fe00784aee101c',
+                    appId: '2DS9A9TBUF',
+                    defaultIndex: 'v4',
+                    multi: {
+                        v4: 'Version 4',
+                        v3: 'Version 3',
+                    },
+                    indexes: [{
+                        index: 'v4',
+                        settings: {
+                            attributesToSnippet: [
+                                'body',
+                            ],
+                        }
+                    }, {
+                        index: 'v3',
+                        settings: {
+                            attributesToSnippet: [
+                                'body',
+                            ],
+                        }
+                    }],
+                },
+            },
+            markdown: {
+                smartypants: true,
+                renderer: {
+                    code: SplitCodeBlocks.renderCode,
+                },
+            },
+        };
+    </script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify-copy-code"></script>
+    <!-- <script src="//unpkg.com/docsify-algolia-search-plugin@1.0.0-beta.2/dist/index.js"></script> -->
+    <script src="./node_modules/docsify-algolia-search-plugin/dist/index.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-scss.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-apacheconf.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-less.min.js"></script>
+    <script>
+        // if (typeof navigator.serviceWorker !== 'undefined') {
+        //     navigator.serviceWorker.register('sw.js')
+        // }
+    </script>
+</body>
+</html>
