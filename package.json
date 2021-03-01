@@ -11,7 +11,7 @@
     "generate:docs:4": "node node_modules/wee-docs-generator/index.js --v 4"
   },
   "dependencies": {
-    "docsify": "^4.9.4",
+    "docsify": "^4.12.0",
     "wee-docs-generator": "^1.0.0"
   }
 }
